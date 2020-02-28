@@ -1,0 +1,356 @@
+\hypertarget{Panel_8c}{}\section{source/\+Panel.c File Reference}
+\label{Panel_8c}\index{source/\+Panel.\+c@{source/\+Panel.\+c}}
+
+
+Implementation of \hyperlink{Panel_8h}{Panel.\+h}.  
+
+
+{\ttfamily \#include \char`\"{}Panel.\+h\char`\"{}}\newline
+Include dependency graph for Panel.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Panel_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{Panel_8c_acad85b10af5496b4552ead8241419793}{clean\+Orders} (int $\ast$orders)
+\begin{DoxyCompactList}\small\item\em Function to clear all orders. \end{DoxyCompactList}\item 
+void \hyperlink{Panel_8c_a03e8459eaa863a4c7e3a21985f407618}{panel\+Default} (\hyperlink{structPanel}{Panel} $\ast$p)
+\begin{DoxyCompactList}\small\item\em Function to initialize panel. \end{DoxyCompactList}\item 
+int \hyperlink{Panel_8c_a5192947f9c6d4e31b11ae7afbc1800dc}{check\+Orders} (int $\ast$orders, int floor)
+\begin{DoxyCompactList}\small\item\em Function to check if order is already in array, return -\/1 if not. \end{DoxyCompactList}\item 
+void \hyperlink{Panel_8c_a6e33d972d9ef96e4ea43c0a1e8445b3d}{ls\+Orders} (int $\ast$orders)
+\begin{DoxyCompactList}\small\item\em Function to shift orders to the left side. \end{DoxyCompactList}\item 
+void \hyperlink{Panel_8c_a1fd21468d55f6b120450c76aff0fa254}{push\+Orders} (\hyperlink{structPanel}{Panel} $\ast$p)
+\begin{DoxyCompactList}\small\item\em Function to push orders into orders array. \end{DoxyCompactList}\item 
+void \hyperlink{Panel_8c_a6b9f3a7f61812553cbb6fb9df5e21620}{delay} (\hyperlink{structPanel}{Panel} $\ast$p, int number\+\_\+of\+\_\+seconds)
+\begin{DoxyCompactList}\small\item\em Function to add time-\/delay and be able to push orders while in delay. \end{DoxyCompactList}\item 
+bool \hyperlink{Panel_8c_acac36c822c1bf712637a7e349ec0ef65}{check\+If\+Orders} (\hyperlink{structPanel}{Panel} $\ast$p)
+\begin{DoxyCompactList}\small\item\em Function to check if there are orders in the orders array. \end{DoxyCompactList}\item 
+int \hyperlink{Panel_8c_a14d66228d3632853c0dd0284abb93c32}{max\+Value} (\hyperlink{structPanel}{Panel} $\ast$p, \hyperlink{structState}{State} $\ast$s)
+\begin{DoxyCompactList}\small\item\em Function to return highest value in orders array. \end{DoxyCompactList}\item 
+int \hyperlink{Panel_8c_a058e0caf8945003a5acdef81b5f23f52}{min\+Value} (\hyperlink{structPanel}{Panel} $\ast$p, \hyperlink{structState}{State} $\ast$s)
+\begin{DoxyCompactList}\small\item\em Function to return lowest value in orders array. \end{DoxyCompactList}\item 
+bool \hyperlink{Panel_8c_a827423f0036ddebf7fb5bb1f3b64d6ed}{series\+Of\+Downs} (\hyperlink{structPanel}{Panel} $\ast$p)
+\begin{DoxyCompactList}\small\item\em series\+Of\+Downs function to check if orders include a series of downward-\/orders (return true if there is) \end{DoxyCompactList}\item 
+bool \hyperlink{Panel_8c_aa2b311278cea18199e1a55db260ba7aa}{series\+Of\+Ups} (\hyperlink{structPanel}{Panel} $\ast$p)
+\begin{DoxyCompactList}\small\item\em series\+Of\+Ups function to check if orders include a series of upward-\/orders (return true if there is) \end{DoxyCompactList}\item 
+int \hyperlink{Panel_8c_ac80a446f487d6ceb3b2ea4cddb2a7881}{closest\+Floor} (\hyperlink{structPanel}{Panel} $\ast$p, \hyperlink{structState}{State} $\ast$s)
+\begin{DoxyCompactList}\small\item\em Function to return next floor to go to. \end{DoxyCompactList}\item 
+void \hyperlink{Panel_8c_a35a42e3c4897fed8fc3fe8993ccd8d4f}{clear\+Executed} (\hyperlink{structPanel}{Panel} $\ast$p, \hyperlink{structState}{State} $\ast$s)
+\begin{DoxyCompactList}\small\item\em Function to clear executed orders. \end{DoxyCompactList}\item 
+void \hyperlink{Panel_8c_a4dbf04c3a78cd52c02b19fc71715dcf3}{floor\+Reached} (\hyperlink{structPanel}{Panel} $\ast$p, \hyperlink{structState}{State} $\ast$s)
+\begin{DoxyCompactList}\small\item\em Function to check if elevator has reached the correct floor. \end{DoxyCompactList}\item 
+void \hyperlink{Panel_8c_a2ae86946a1d05353e57e5b3fb7785989}{set\+Order\+Lights} (\hyperlink{structPanel}{Panel} $\ast$p)
+\begin{DoxyCompactList}\small\item\em Function to set order lights. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Implementation of \hyperlink{Panel_8h}{Panel.\+h}. 
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{Panel_8c_acac36c822c1bf712637a7e349ec0ef65}\label{Panel_8c_acac36c822c1bf712637a7e349ec0ef65}} 
+\index{Panel.\+c@{Panel.\+c}!check\+If\+Orders@{check\+If\+Orders}}
+\index{check\+If\+Orders@{check\+If\+Orders}!Panel.\+c@{Panel.\+c}}
+\subsubsection{\texorpdfstring{check\+If\+Orders()}{checkIfOrders()}}
+{\footnotesize\ttfamily bool check\+If\+Orders (\begin{DoxyParamCaption}\item[{\hyperlink{structPanel}{Panel} $\ast$}]{p }\end{DoxyParamCaption})}
+
+
+
+Function to check if there are orders in the orders array. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em p} & \hyperlink{structPanel}{Panel} containing orders to check out \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 113 of file Panel.\+c.
+
+\mbox{\Hypertarget{Panel_8c_a5192947f9c6d4e31b11ae7afbc1800dc}\label{Panel_8c_a5192947f9c6d4e31b11ae7afbc1800dc}} 
+\index{Panel.\+c@{Panel.\+c}!check\+Orders@{check\+Orders}}
+\index{check\+Orders@{check\+Orders}!Panel.\+c@{Panel.\+c}}
+\subsubsection{\texorpdfstring{check\+Orders()}{checkOrders()}}
+{\footnotesize\ttfamily int check\+Orders (\begin{DoxyParamCaption}\item[{int $\ast$}]{orders,  }\item[{int}]{floor }\end{DoxyParamCaption})}
+
+
+
+Function to check if order is already in array, return -\/1 if not. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em orders} & Array of orders \\
+\hline
+\mbox{\tt in}  & {\em floor} & Floor to check \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 28 of file Panel.\+c.
+
+\mbox{\Hypertarget{Panel_8c_acad85b10af5496b4552ead8241419793}\label{Panel_8c_acad85b10af5496b4552ead8241419793}} 
+\index{Panel.\+c@{Panel.\+c}!clean\+Orders@{clean\+Orders}}
+\index{clean\+Orders@{clean\+Orders}!Panel.\+c@{Panel.\+c}}
+\subsubsection{\texorpdfstring{clean\+Orders()}{cleanOrders()}}
+{\footnotesize\ttfamily void clean\+Orders (\begin{DoxyParamCaption}\item[{int $\ast$}]{orders }\end{DoxyParamCaption})}
+
+
+
+Function to clear all orders. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em orders} & Array of orders \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 8 of file Panel.\+c.
+
+\mbox{\Hypertarget{Panel_8c_a35a42e3c4897fed8fc3fe8993ccd8d4f}\label{Panel_8c_a35a42e3c4897fed8fc3fe8993ccd8d4f}} 
+\index{Panel.\+c@{Panel.\+c}!clear\+Executed@{clear\+Executed}}
+\index{clear\+Executed@{clear\+Executed}!Panel.\+c@{Panel.\+c}}
+\subsubsection{\texorpdfstring{clear\+Executed()}{clearExecuted()}}
+{\footnotesize\ttfamily void clear\+Executed (\begin{DoxyParamCaption}\item[{\hyperlink{structPanel}{Panel} $\ast$}]{p,  }\item[{\hyperlink{structState}{State} $\ast$}]{s }\end{DoxyParamCaption})}
+
+
+
+Function to clear executed orders. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em p} & \hyperlink{structPanel}{Panel} containing executed orders to clear \\
+\hline
+\mbox{\tt in}  & {\em s} & \hyperlink{structState}{State} of elevator \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 214 of file Panel.\+c.
+
+\mbox{\Hypertarget{Panel_8c_ac80a446f487d6ceb3b2ea4cddb2a7881}\label{Panel_8c_ac80a446f487d6ceb3b2ea4cddb2a7881}} 
+\index{Panel.\+c@{Panel.\+c}!closest\+Floor@{closest\+Floor}}
+\index{closest\+Floor@{closest\+Floor}!Panel.\+c@{Panel.\+c}}
+\subsubsection{\texorpdfstring{closest\+Floor()}{closestFloor()}}
+{\footnotesize\ttfamily int closest\+Floor (\begin{DoxyParamCaption}\item[{\hyperlink{structPanel}{Panel} $\ast$}]{p,  }\item[{\hyperlink{structState}{State} $\ast$}]{s }\end{DoxyParamCaption})}
+
+
+
+Function to return next floor to go to. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em p} & \hyperlink{structPanel}{Panel} containing orders to check out \\
+\hline
+\mbox{\tt in}  & {\em s} & \hyperlink{structState}{State} of elevator \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 173 of file Panel.\+c.
+
+\mbox{\Hypertarget{Panel_8c_a6b9f3a7f61812553cbb6fb9df5e21620}\label{Panel_8c_a6b9f3a7f61812553cbb6fb9df5e21620}} 
+\index{Panel.\+c@{Panel.\+c}!delay@{delay}}
+\index{delay@{delay}!Panel.\+c@{Panel.\+c}}
+\subsubsection{\texorpdfstring{delay()}{delay()}}
+{\footnotesize\ttfamily void delay (\begin{DoxyParamCaption}\item[{\hyperlink{structPanel}{Panel} $\ast$}]{p,  }\item[{int}]{number\+\_\+of\+\_\+seconds }\end{DoxyParamCaption})}
+
+
+
+Function to add time-\/delay and be able to push orders while in delay. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em p} & \hyperlink{structPanel}{Panel} to push orders into while in delay \\
+\hline
+\mbox{\tt in}  & {\em number\+\_\+of\+\_\+seconds} & Number of seconds to delay \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 96 of file Panel.\+c.
+
+\mbox{\Hypertarget{Panel_8c_a4dbf04c3a78cd52c02b19fc71715dcf3}\label{Panel_8c_a4dbf04c3a78cd52c02b19fc71715dcf3}} 
+\index{Panel.\+c@{Panel.\+c}!floor\+Reached@{floor\+Reached}}
+\index{floor\+Reached@{floor\+Reached}!Panel.\+c@{Panel.\+c}}
+\subsubsection{\texorpdfstring{floor\+Reached()}{floorReached()}}
+{\footnotesize\ttfamily void floor\+Reached (\begin{DoxyParamCaption}\item[{\hyperlink{structPanel}{Panel} $\ast$}]{p,  }\item[{\hyperlink{structState}{State} $\ast$}]{s }\end{DoxyParamCaption})}
+
+
+
+Function to check if elevator has reached the correct floor. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em p} & \hyperlink{structPanel}{Panel} containing orders to check out \\
+\hline
+\mbox{\tt in}  & {\em s} & \hyperlink{structState}{State} of elevator \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 231 of file Panel.\+c.
+
+\mbox{\Hypertarget{Panel_8c_a6e33d972d9ef96e4ea43c0a1e8445b3d}\label{Panel_8c_a6e33d972d9ef96e4ea43c0a1e8445b3d}} 
+\index{Panel.\+c@{Panel.\+c}!ls\+Orders@{ls\+Orders}}
+\index{ls\+Orders@{ls\+Orders}!Panel.\+c@{Panel.\+c}}
+\subsubsection{\texorpdfstring{ls\+Orders()}{lsOrders()}}
+{\footnotesize\ttfamily void ls\+Orders (\begin{DoxyParamCaption}\item[{int $\ast$}]{orders }\end{DoxyParamCaption})}
+
+
+
+Function to shift orders to the left side. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em orders} & Array to leftshift \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 38 of file Panel.\+c.
+
+\mbox{\Hypertarget{Panel_8c_a14d66228d3632853c0dd0284abb93c32}\label{Panel_8c_a14d66228d3632853c0dd0284abb93c32}} 
+\index{Panel.\+c@{Panel.\+c}!max\+Value@{max\+Value}}
+\index{max\+Value@{max\+Value}!Panel.\+c@{Panel.\+c}}
+\subsubsection{\texorpdfstring{max\+Value()}{maxValue()}}
+{\footnotesize\ttfamily int max\+Value (\begin{DoxyParamCaption}\item[{\hyperlink{structPanel}{Panel} $\ast$}]{p,  }\item[{\hyperlink{structState}{State} $\ast$}]{s }\end{DoxyParamCaption})}
+
+
+
+Function to return highest value in orders array. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em p} & \hyperlink{structPanel}{Panel} containing orders to check out \\
+\hline
+\mbox{\tt in}  & {\em s} & \hyperlink{structState}{State} of elevator \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 122 of file Panel.\+c.
+
+\mbox{\Hypertarget{Panel_8c_a058e0caf8945003a5acdef81b5f23f52}\label{Panel_8c_a058e0caf8945003a5acdef81b5f23f52}} 
+\index{Panel.\+c@{Panel.\+c}!min\+Value@{min\+Value}}
+\index{min\+Value@{min\+Value}!Panel.\+c@{Panel.\+c}}
+\subsubsection{\texorpdfstring{min\+Value()}{minValue()}}
+{\footnotesize\ttfamily int min\+Value (\begin{DoxyParamCaption}\item[{\hyperlink{structPanel}{Panel} $\ast$}]{p,  }\item[{\hyperlink{structState}{State} $\ast$}]{s }\end{DoxyParamCaption})}
+
+
+
+Function to return lowest value in orders array. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em p} & \hyperlink{structPanel}{Panel} containing orders to check out \\
+\hline
+\mbox{\tt in}  & {\em s} & \hyperlink{structState}{State} of elevator \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 137 of file Panel.\+c.
+
+\mbox{\Hypertarget{Panel_8c_a03e8459eaa863a4c7e3a21985f407618}\label{Panel_8c_a03e8459eaa863a4c7e3a21985f407618}} 
+\index{Panel.\+c@{Panel.\+c}!panel\+Default@{panel\+Default}}
+\index{panel\+Default@{panel\+Default}!Panel.\+c@{Panel.\+c}}
+\subsubsection{\texorpdfstring{panel\+Default()}{panelDefault()}}
+{\footnotesize\ttfamily void panel\+Default (\begin{DoxyParamCaption}\item[{\hyperlink{structPanel}{Panel} $\ast$}]{p }\end{DoxyParamCaption})}
+
+
+
+Function to initialize panel. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em p} & \hyperlink{structPanel}{Panel} to initialize \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 21 of file Panel.\+c.
+
+\mbox{\Hypertarget{Panel_8c_a1fd21468d55f6b120450c76aff0fa254}\label{Panel_8c_a1fd21468d55f6b120450c76aff0fa254}} 
+\index{Panel.\+c@{Panel.\+c}!push\+Orders@{push\+Orders}}
+\index{push\+Orders@{push\+Orders}!Panel.\+c@{Panel.\+c}}
+\subsubsection{\texorpdfstring{push\+Orders()}{pushOrders()}}
+{\footnotesize\ttfamily void push\+Orders (\begin{DoxyParamCaption}\item[{\hyperlink{structPanel}{Panel} $\ast$}]{p }\end{DoxyParamCaption})}
+
+
+
+Function to push orders into orders array. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em p} & \hyperlink{structPanel}{Panel} to push orders into \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 52 of file Panel.\+c.
+
+\mbox{\Hypertarget{Panel_8c_a827423f0036ddebf7fb5bb1f3b64d6ed}\label{Panel_8c_a827423f0036ddebf7fb5bb1f3b64d6ed}} 
+\index{Panel.\+c@{Panel.\+c}!series\+Of\+Downs@{series\+Of\+Downs}}
+\index{series\+Of\+Downs@{series\+Of\+Downs}!Panel.\+c@{Panel.\+c}}
+\subsubsection{\texorpdfstring{series\+Of\+Downs()}{seriesOfDowns()}}
+{\footnotesize\ttfamily bool series\+Of\+Downs (\begin{DoxyParamCaption}\item[{\hyperlink{structPanel}{Panel} $\ast$}]{p }\end{DoxyParamCaption})}
+
+
+
+series\+Of\+Downs function to check if orders include a series of downward-\/orders (return true if there is) 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em p} & \hyperlink{structPanel}{Panel} containing orders to check out \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 151 of file Panel.\+c.
+
+\mbox{\Hypertarget{Panel_8c_aa2b311278cea18199e1a55db260ba7aa}\label{Panel_8c_aa2b311278cea18199e1a55db260ba7aa}} 
+\index{Panel.\+c@{Panel.\+c}!series\+Of\+Ups@{series\+Of\+Ups}}
+\index{series\+Of\+Ups@{series\+Of\+Ups}!Panel.\+c@{Panel.\+c}}
+\subsubsection{\texorpdfstring{series\+Of\+Ups()}{seriesOfUps()}}
+{\footnotesize\ttfamily bool series\+Of\+Ups (\begin{DoxyParamCaption}\item[{\hyperlink{structPanel}{Panel} $\ast$}]{p }\end{DoxyParamCaption})}
+
+
+
+series\+Of\+Ups function to check if orders include a series of upward-\/orders (return true if there is) 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em p} & \hyperlink{structPanel}{Panel} containing orders to check out \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 162 of file Panel.\+c.
+
+\mbox{\Hypertarget{Panel_8c_a2ae86946a1d05353e57e5b3fb7785989}\label{Panel_8c_a2ae86946a1d05353e57e5b3fb7785989}} 
+\index{Panel.\+c@{Panel.\+c}!set\+Order\+Lights@{set\+Order\+Lights}}
+\index{set\+Order\+Lights@{set\+Order\+Lights}!Panel.\+c@{Panel.\+c}}
+\subsubsection{\texorpdfstring{set\+Order\+Lights()}{setOrderLights()}}
+{\footnotesize\ttfamily void set\+Order\+Lights (\begin{DoxyParamCaption}\item[{\hyperlink{structPanel}{Panel} $\ast$}]{p }\end{DoxyParamCaption})}
+
+
+
+Function to set order lights. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em p} & \hyperlink{structPanel}{Panel} containing orders we want to turn on lights for \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 245 of file Panel.\+c.
+

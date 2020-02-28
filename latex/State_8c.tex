@@ -1,0 +1,92 @@
+\hypertarget{State_8c}{}\section{source/\+State.c File Reference}
+\label{State_8c}\index{source/\+State.\+c@{source/\+State.\+c}}
+
+
+Implementation of \hyperlink{State_8h}{State.\+h}.  
+
+
+{\ttfamily \#include \char`\"{}State.\+h\char`\"{}}\newline
+Include dependency graph for State.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{State_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{State_8c_aeeb7819b7b73579cb65b2258d43004b3}{state\+Default} (\hyperlink{structState}{State} $\ast$Elevator)
+\begin{DoxyCompactList}\small\item\em Function to initialize state of elevator (use only outside of while-\/loop) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{State_8c_a90f96e4c6bcd783cbd2dc2addf39b803}\label{State_8c_a90f96e4c6bcd783cbd2dc2addf39b803}} 
+int \hyperlink{State_8c_a90f96e4c6bcd783cbd2dc2addf39b803}{check\+State} ()
+\begin{DoxyCompactList}\small\item\em Function to check if elevator is in a defined state (returns 1 if it is, 0 if not) \end{DoxyCompactList}\item 
+int \hyperlink{State_8c_ad3aa6fc318fede39e5889b004ec47be0}{get\+Floor} (int check)
+\begin{DoxyCompactList}\small\item\em Function to return the floor elevator is in (needs to be in a defined state to return anything) \end{DoxyCompactList}\item 
+void \hyperlink{State_8c_a62c85e3e21ac96c3aaadc46219e17dca}{state\+Control} (\hyperlink{structState}{State} $\ast$Elevator)
+\begin{DoxyCompactList}\small\item\em Function to update the state of elevator throughout the loop. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Implementation of \hyperlink{State_8h}{State.\+h}. 
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{State_8c_ad3aa6fc318fede39e5889b004ec47be0}\label{State_8c_ad3aa6fc318fede39e5889b004ec47be0}} 
+\index{State.\+c@{State.\+c}!get\+Floor@{get\+Floor}}
+\index{get\+Floor@{get\+Floor}!State.\+c@{State.\+c}}
+\subsubsection{\texorpdfstring{get\+Floor()}{getFloor()}}
+{\footnotesize\ttfamily int get\+Floor (\begin{DoxyParamCaption}\item[{int}]{check }\end{DoxyParamCaption})}
+
+
+
+Function to return the floor elevator is in (needs to be in a defined state to return anything) 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em check} & Parameter to tell function if elevator is in a defined state \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 40 of file State.\+c.
+
+\mbox{\Hypertarget{State_8c_a62c85e3e21ac96c3aaadc46219e17dca}\label{State_8c_a62c85e3e21ac96c3aaadc46219e17dca}} 
+\index{State.\+c@{State.\+c}!state\+Control@{state\+Control}}
+\index{state\+Control@{state\+Control}!State.\+c@{State.\+c}}
+\subsubsection{\texorpdfstring{state\+Control()}{stateControl()}}
+{\footnotesize\ttfamily void state\+Control (\begin{DoxyParamCaption}\item[{\hyperlink{structState}{State} $\ast$}]{Elevator }\end{DoxyParamCaption})}
+
+
+
+Function to update the state of elevator throughout the loop. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em Elevator} & Elevator to follow state of \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 52 of file State.\+c.
+
+\mbox{\Hypertarget{State_8c_aeeb7819b7b73579cb65b2258d43004b3}\label{State_8c_aeeb7819b7b73579cb65b2258d43004b3}} 
+\index{State.\+c@{State.\+c}!state\+Default@{state\+Default}}
+\index{state\+Default@{state\+Default}!State.\+c@{State.\+c}}
+\subsubsection{\texorpdfstring{state\+Default()}{stateDefault()}}
+{\footnotesize\ttfamily void state\+Default (\begin{DoxyParamCaption}\item[{\hyperlink{structState}{State} $\ast$}]{Elevator }\end{DoxyParamCaption})}
+
+
+
+Function to initialize state of elevator (use only outside of while-\/loop) 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em Elevator} & Elevator to initialize \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 8 of file State.\+c.
+
